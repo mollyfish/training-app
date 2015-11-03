@@ -1,0 +1,10 @@
+<div class="list">
+  <article ng-repeat="workout in vm.workouts">
+    <h1>{{workout.sport}} {{workout.distance}}{{workout.units}}</h1>
+      <p>{{workout.date | date: 'MMM dd, yyyy'}}</p>
+      <p>{{workout.comments}} comments</p>
+      <a class="btn btn__text btn--dark" href="#/workouts/{{workout._id}}">Read More</a>
+    <button ng-click="vm.delete(workout)">(delete this workout)</button>
+  </article>
+  <a class="btn btn__text btn--light" href="#/workouts/new">Add a new workout</a>
+</div>
