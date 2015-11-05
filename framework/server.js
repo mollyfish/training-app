@@ -33,9 +33,9 @@ workoutsRoute.post(function (req, res) {
   var workout = new Workout();
 
   // Set the workout properties that came from the WORKOUT data
-  workout.title = req.body.title;
-  workout.content = req.body.content;
-  workout.author = req.body.author;
+  workout.sport = req.body.sport;
+  workout.distance = req.body.distance;
+  workout.units = req.body.units;
   workout.date = req.body.date;
   workout.comments = req.body.comments;
 
@@ -90,9 +90,9 @@ workoutRoute.put(function(req, res) {
     }
 
     // Update the workout's title
-    workout.title = req.body.title;
-    workout.content = req.body.content;
-    workout.author = req.body.author;
+    workout.sport = req.body.sport;
+    workout.distance = req.body.distance;
+    workout.units = req.body.units;
     workout.date = req.body.date;
     workout.comments = req.body.comments;
 

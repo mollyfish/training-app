@@ -3,4 +3,5 @@
   <p>{{vm.workout.date | date: 'MMM dd, yyyy'}}</p>
   <p>{{vm.workout.comments}}</p>
   <a href="#/workouts/{{vm.workout._id}}/edit">edit this workout</a>
+  <pre>{{vm.workout | json}}</pre>
 </article>
