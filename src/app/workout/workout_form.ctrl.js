@@ -4,9 +4,7 @@ require('../app');
   "use strict";
   angular.module("training").controller("WorkoutFormCtrl", ["WorkoutsService", "$routeParams", "$location", function (WorkoutsService, $routeParams, $location) {
     var vm = this;
-
     vm.save = saveForm;
-
     vm.workout = {};
 
     initialize();
@@ -19,7 +17,6 @@ require('../app');
           vm.workout.date = vm.workout.date || new Date();
         });
       }
-
     }
 
     function saveForm () {
