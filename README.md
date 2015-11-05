@@ -1,1 +1,4 @@
-An Angular app to track my half-marathon trianing plan.
+#Half Marathon Training
+### Molly Kent
+
+A training schedule app for my upcoming half marathon

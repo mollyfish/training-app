@@ -3,9 +3,9 @@ var src = './src';
 
 module.exports = {
   javascript: {
-    src: src + '/js/**/*.js',
-    dest: dest,
-    entryPoint: src + '/index.js',
+    src: src + '/app/**/*.js',
+    dest: dest + '/js/',
+    entryPoint: src + '/webpack-entry.js',
     packedFile: 'packed.js'
   },
   sass: {
@@ -15,21 +15,13 @@ module.exports = {
       indentedSyntax: true,
     }
   },
-  fonts: {
-    src: src + "/styles/fonts/*",
-    dest: dest
-  },
-  images: {
-    src: src + "/imgs/*",
-    dest: dest
+  views: {
+    src: src + "/app/views/**/*.html",
+    dest: dest + "/views/",
   },
   html: {
-    src: src + "/**/*.html",
-    dest: dest
-  },
-  templates: {
-    src: src + "/templates/**/*.html",
-    dest: dest + "/templates/",
+    src: src + "/app/*.html",
+    dest: dest,
   },
   server: {
     serverFile: './server.js'
