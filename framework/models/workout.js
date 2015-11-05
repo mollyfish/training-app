@@ -1,7 +1,5 @@
-// Load required packages
 var mongoose = require("mongoose");
 
-// Define our teams schema
 var WorkoutSchema = new mongoose.Schema({
   sport: String,
   distance: Number,
@@ -10,5 +8,4 @@ var WorkoutSchema = new mongoose.Schema({
   comments: String
 });
 
-// Export the Mongoose model
 module.exports = mongoose.model("Workout", WorkoutSchema);
