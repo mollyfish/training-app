@@ -1,0 +1,17 @@
+header {
+  background-color: $background-color-dark;
+  h1 {
+    color: $text-color-light;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  nav {
+    font-size: .7em;
+    text-transform: uppercase;
+    a {
+      padding-left: 1em;
+      padding-right: 1em;
+      color: $text-color-light;
+    }
+  }
+}

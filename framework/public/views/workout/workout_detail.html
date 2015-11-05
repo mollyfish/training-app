@@ -1,0 +1,7 @@
+<article class="workout-detail">
+  <h1>{{vm.workout.sport}} {{vm.workout.distance}}{{vm.workout.units}}</h1>
+  <p>{{vm.workout.date | date: 'MMM dd, yyyy'}}</p>
+  <p>{{vm.workout.comments}}</p>
+  <a class="btn btn__text btn--light" href="#/workouts/{{vm.workout._id}}/edit">edit this workout</a>
+  <pre>{{vm.workout | json}}</pre>
+</article>
