@@ -1,5 +1,15 @@
 <form ng-submit="vm.save()" ng-controller="DateCtrl">
-  <input type="text" ng-model="vm.workout.sport" placeholder="Sport" />
+  <!-- <input type="text" ng-model="vm.workout.sport" placeholder="Sport" /> -->
+  <label for="swim">Swim </label>
+  <input type="radio" ng-model="vm.workout.swim" name="sport" id="swim" ng-change="false" ng-value="true">
+  <label for="bike">Bike </label>
+  <input type="radio" ng-model="vm.workout.bike" name="sport" id="bike" ng-change="false" ng-value="true">
+  <label for="run">Run </label>
+  <input type="radio" ng-model="vm.workout.run" name="sport" id="run" ng-change="false" ng-value="true">
+  <label for="xtrain">Xtrain </label>
+  <input type="radio" ng-model="vm.workout.xtrain" name="sport" id="xtrain" ng-change="false" ng-value="true">
+  <label for="rest">Rest </label>
+  <input type="radio" ng-model="vm.workout.rest" name="sport" id="rest" ng-change="false" ng-value="true">
   <input type="number" ng-model="vm.workout.distance" placeholder="0" />
   <input type="text" ng-model="vm.workout.units" placeholder="Units" />
   <input type="date" ng-model="vm.workout.date" />

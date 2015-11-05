@@ -1,9 +1,16 @@
 <div class="workout-list">
-  <article ng-repeat="workout in vm.workouts">
-    <h1>{{workout.sport}} {{workout.distance}}{{workout.units}}</h1>
-    <p>{{workout.date | date: 'MMM dd, yyyy'}}</p>
-    <p>{{workout.comments}}</p>
+  <article ng-repeat="workout in vm.workouts | orderBy: 'date'">
+    <a href="#/workouts/{{workout._id}}">
+      <h1 ng-class="
+        workout.swim ? 'swim' : (
+        workout.run ? 'run' : (
+        workout.bike ? 'bike' : (
+        workout.xtrain ? 'xtrain' : 'rest')))">
+        {{workout.sport}} {{workout.distance}}{{workout.units}}</h1>
+      <p class="date">{{workout.date | date: 'MMM dd, yyyy'}}</p>
+      <p class="comments">{{workout.comments}}</p>
+    </a>
     <button ng-click="vm.delete(workout)">(delete this workout)</button>
   </article>
-  <a href="#/workouts/new">Add a new workout</a>
+  <a href="#/workouts/new" class="btn">Add a new workout</a>
 </div>

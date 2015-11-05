@@ -15,13 +15,49 @@ require('../app');
         }
       },
       update: function (model) {
+        console.log(model);
+        if (model.swim) {
+          model.sport = 'Swim'
+        }
+        if (model.bike) {
+          model.sport = 'Bike'
+        }
+        if (model.run) {
+          model.sport = 'Run'
+        }
+        if (model.xtrain) {
+          model.sport = 'Xtrain'
+        }
+        if (model.rest) {
+          model.sport = 'Rest'
+        } 
+        console.log(model);
         return $http.put(urlRoot + "/" + model._id, model);
       },
       create: function (model) {
+        if (model.swim) {
+          model.sport = 'Swim'
+        }
+        if (model.bike) {
+          model.sport = 'Bike'
+        }
+        if (model.run) {
+          model.sport = 'Run'
+        }
+        if (model.xtrain) {
+          model.sport = 'Xtrain'
+        }
+        if (model.rest) {
+          model.sport = 'Rest'
+        } 
         return $http.post(urlRoot, model); // ideal, but doesn't work
       },
       delete: function (model) {
-        return $http.delete(urlRoot + "/" + model._id);
+        if (confirm('Are you sure you want to delete this workout?')) {
+          return $http.delete(urlRoot + "/" + model._id);
+        } else {
+          return;
+        }
       }
     };
     return Workout;

@@ -24,6 +24,7 @@ require('../app');
 
       method = $routeParams.workout_id ? "update" : "create";
       WorkoutsService[method](vm.workout).then(function (resp) {
+
         $location.path("/workouts/" + resp.data._id);
       });
     }

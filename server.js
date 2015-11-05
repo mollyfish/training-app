@@ -33,6 +33,11 @@ workoutsRoute.post(function (req, res) {
   var workout = new Workout();
 
   // Set the workout properties that came from the WORKOUT data
+  workout.swim = req.body.swim;
+  workout.bike = req.body.bike;
+  workout.run = req.body.run;
+  workout.xtrain = req.body.xtrain;
+  workout.rest = req.body.rest;
   workout.sport = req.body.sport;
   workout.distance = req.body.distance;
   workout.units = req.body.units;
@@ -89,7 +94,11 @@ workoutRoute.put(function(req, res) {
       res.send(err);
     }
 
-    // Update the workout's title
+    workout.swim = req.body.swim;
+    workout.bike = req.body.bike;
+    workout.run = req.body.run;
+    workout.xtrain = req.body.xtrain;
+    workout.rest = req.body.rest;
     workout.sport = req.body.sport;
     workout.distance = req.body.distance;
     workout.units = req.body.units;
