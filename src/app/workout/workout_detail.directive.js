@@ -8,7 +8,7 @@ require('../app');
       scope: {
         workout: "=workout",
       },
-      templateUrl: 'views/workout/workout_details.html',
+      templateUrl: 'views/workout/workout_detail.html',
     };
   });
 }());

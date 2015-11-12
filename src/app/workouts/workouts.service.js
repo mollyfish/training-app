@@ -54,7 +54,7 @@ require('../app');
       },
       delete: function (model) {
         if (confirm('Are you sure you want to delete this workout?')) {
-          return $http.delete(urlRoot + "/" + model._id);
+          return $http.delete(urlRoot + "/" + model);
         } else {
           return;
         }
