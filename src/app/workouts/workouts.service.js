@@ -47,7 +47,8 @@ require('../app');
         }
         if (model.rest) {
           model.sport = 'Rest'
-        } 
+        }
+        console.log(model);
         return $http.post(urlRoot, model); // ideal, but doesn't work
       },
       delete: function (model) {

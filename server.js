@@ -42,6 +42,7 @@ workoutsRoute.post(function (req, res) {
   workout.distance = req.body.distance;
   workout.units = req.body.units;
   workout.date = req.body.date;
+  workout.time = req.body.time;
   workout.comments = req.body.comments;
 
   // Save the workout and check for errors
@@ -103,6 +104,7 @@ workoutRoute.put(function(req, res) {
     workout.distance = req.body.distance;
     workout.units = req.body.units;
     workout.date = req.body.date;
+    workout.time = req.body.time;
     workout.comments = req.body.comments;
 
     // Save the workout and check for errors

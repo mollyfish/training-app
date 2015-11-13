@@ -10,6 +10,7 @@ var WorkoutSchema = new mongoose.Schema({
   distance: Number,
   units: String,
   date: Date,
+  time: String,
   comments: String
 });
 
