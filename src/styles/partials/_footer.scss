@@ -1,20 +1,6 @@
 footer {
-  p {
-    padding-bottom: 1em;
-  }
-  @include flex-container(flex,row,wrap,center,center,center);
-  font-family: $main-font-medium;
-  font-size: .4em;
-  border-top: 1px solid $border-color-med;
-  padding-top: 3em;
-  ul {
-    padding-bottom: 1em;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  li {
-    padding-left: 2em;
-    padding-right: 2em;
-    display: inline;
-  }
+  @include set-font($main-font-regular, $font-tiny, $text-color-light);
+  background-color: $background-color-dark;
+  padding: 1em;
+  text-align: center;
 }

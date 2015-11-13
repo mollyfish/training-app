@@ -1,4 +1,4 @@
-@mixin flex-container($type,$direction,$wrap,$justify,$content,$items) {
+@mixin flex-container($type, $direction, $wrap, $justify: center, $content: center, $items: center) {
   display: $type;
   flex-direction: $direction;
   flex-wrap: $wrap;

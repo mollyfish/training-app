@@ -1,57 +1,45 @@
 .workout-detail {
-  @include flex-container(flex,column,nowrap,flex-start,flex-start,flex-start);
-  margin: 0 20% 2em 20%;
-  padding: 2em 0;
-  text-align: left;
-  article {
-    width: 100%;
-    border-bottom: 1px solid $border-color-med;
-    padding: 2em 0;
-  }
+  margin: 2em 2em 2em 20%;
+  padding-left: 1em;
+  border-left: 1px solid $border-color-med;
   h1 {
-    font-family: $main-font-regular;
-    font-size: 200%;
-    margin-bottom: 1em;
-  }
-  p {
-    font-family: $main-font-regular;
-    font-size: 100%;
-    line-height: 1.7;
-    margin: 1em 0 2em 0;
-  }
-  .workout-data {
-    @include flex-container(flex,row,wrap,space-between,center,center);
-  }
-  .btn {
-    width: 100%;
-    margin-top: 1em;
-    &.btn--light {
-      width: 15em;
-      margin-top: 1em;
-    }
-    @include breaks(desktop) {
-      width: 10em;
-      margin-top: 0;
-    }
-  }
-  ul {
-    @include flex-container(flex,row,wrap,center,center,center);
-  }
-  li {
-    margin: 0.5em 1em;
-    display: inline;
-  }
-  li:before {
-    content: "";
+    @include set-font($main-font-regular, $font-xl);
     display: inline-block;
-    position: relative;
-    bottom: 0.25em;
-    right: 1em;
-    @include breaks(desktop) {
-      content: ".";
-    }
   }
-  li:first-child:before {
-    content: "";
+  h2 {
+    @include set-font($main-font-regular, $font-l);
+    margin-top: 0.5em;
+  }
+  a {
+    @include set-font($main-font-regular, $font-sm);
+  }
+  button {
+    display: block;
+    padding: 0;
+    margin-top: 1em;
+    @include set-font($main-font-regular, $font-sm);
+  }
+  .date {
+    @include set-font($main-font-regular, $font-sm);
+    margin: 0.25em 0;
+  }
+  .comments {
+    @include set-font($main-font-regular, $font-reg);
+    margin: 0.5em 0 1em 0;
+  }
+  .swim {
+    color: $text-color-swim;
+  }
+  .bike {
+    color: $text-color-bike;
+  }
+  .run {
+    color: $text-color-run;
+  }
+  .xtrain {
+    color: $text-color-xtrain;
+  }
+  .rest {
+    color: $text-color-rest;
   }
 }

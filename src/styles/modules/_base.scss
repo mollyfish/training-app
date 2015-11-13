@@ -1,3 +1,7 @@
+html {
+  background-color: $background-color-dark;
+}
 body {
-  font-family: $main-font-regular;
+  @include set-font();
+  background-color: $background-color-light;
 }

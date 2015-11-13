@@ -11,8 +11,6 @@ require('../app');
 
     initialize();
 
-    /////
-
     function initialize () {
       getWorkouts();
     }

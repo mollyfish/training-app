@@ -1,17 +1,16 @@
 header {
+  padding: 1em;
   background-color: $background-color-dark;
   h1 {
-    color: $text-color-light;
-    font-size: 1.5em;
-    text-align: center;
+    @include set-font($main-font-regular, $font-xxl, $text-color-light);
   }
   nav {
-    font-size: .7em;
-    text-transform: uppercase;
+    padding-top: 0.5em;
     a {
-      padding-left: 1em;
-      padding-right: 1em;
-      color: $text-color-light;
+      @include set-font($main-font-regular, $font-reg, $text-color-light);
+      &:hover {
+        color: $text-color-med;
+      }
     }
   }
 }
