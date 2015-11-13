@@ -1,0 +1,9 @@
+.calendar {
+  color: red;
+  .week {
+    width: 90%;
+  }
+  .day {
+   @include flex-container(inline-flex, row, nowrap, space-between, space-between, space-between); 
+  }
+}
