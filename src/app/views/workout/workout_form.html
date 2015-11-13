@@ -1,18 +1,27 @@
 <form ng-submit="vm.save()" ng-controller="DateCtrl">
-  <!-- <input type="text" ng-model="vm.workout.sport" placeholder="Sport" /> -->
-  <label for="swim">Swim </label>
-  <input type="radio" ng-model="vm.workout.swim" name="sport" id="swim" ng-change="false" ng-value="true">
-  <label for="bike">Bike </label>
-  <input type="radio" ng-model="vm.workout.bike" name="sport" id="bike" ng-change="false" ng-value="true">
-  <label for="run">Run </label>
-  <input type="radio" ng-model="vm.workout.run" name="sport" id="run" ng-change="false" ng-value="true">
-  <label for="xtrain">Xtrain </label>
-  <input type="radio" ng-model="vm.workout.xtrain" name="sport" id="xtrain" ng-change="false" ng-value="true">
-  <label for="rest">Rest </label>
-  <input type="radio" ng-model="vm.workout.rest" name="sport" id="rest" ng-change="false" ng-value="true">
-  <input type="number" ng-model="vm.workout.distance" placeholder="0" />
-  <input type="text" ng-model="vm.workout.units" placeholder="Units" />
-  <input type="date" ng-model="vm.workout.date" />
-  <input type="text" ng-model="vm.workout.comments" placeholder="comments" />
+  <h1>Add a new workout:</h1>
+  <fieldset class="radios">
+    <label for="swim"> Swim
+      <input type="radio" ng-model="vm.workout.swim" name="sport" id="swim" ng-change="false" ng-value="true">
+    </label>
+    <label for="bike"> Bike
+      <input type="radio" ng-model="vm.workout.bike" name="sport" id="bike" ng-change="false" ng-value="true"> 
+    </label>
+    <label for="run"> Run
+      <input type="radio" ng-model="vm.workout.run" name="sport" id="run" ng-change="false" ng-value="true">
+    </label>
+    <label for="xtrain"> Xtrain
+      <input type="radio" ng-model="vm.workout.xtrain" name="sport" id="xtrain" ng-change="false" ng-value="true">
+    </label>
+    <label for="rest"> Rest
+      <input type="radio" ng-model="vm.workout.rest" name="sport" id="rest" ng-change="false" ng-value="true">
+    </label>
+  </fieldset>
+  <fieldset class="inputs">
+    <input type="number" ng-model="vm.workout.distance" placeholder="Distance or Time" />
+    <input type="text" ng-model="vm.workout.units" placeholder="mi / m / hrs" />
+    <input type="date" ng-model="vm.workout.date" />
+    <input type="text" ng-model="vm.workout.comments" placeholder="Notes" />
+  </fieldset>
   <button type="submit" name="Submit">Submit</button>
 </form>
