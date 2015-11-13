@@ -1,6 +1,21 @@
 .workout-list {
   padding: 1em;
-  article {
+  border-bottom: 1px solid rgba($border-color-med, 0.25);
+  &:last-child {
+    border-bottom: none;
+  }
+  &.hidden {
+    button {
+      @include set-font($main-font-regular, $font-sm);
+      margin: 0;
+    }
+  }
+  h1 {
+    @include set-font($main-font-regular, $font-l);
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  section {
     @include flex-container(inline-flex, column, wrap, flex-start, flex-start, flex-start);
     margin: 2px;
     padding: 0.5em;
@@ -12,9 +27,10 @@
       min-height: 4.5em;
     }
   }
+
   button {
     @include flex-container(flex, column, nowrap, flex-start, flex-start, flex-start);
-    @include set-font($main-font-regular, $font-tiny)
+    @include set-font($main-font-regular, $font-sm)
     margin: 1em 0;
     padding: 0;
   }
@@ -27,7 +43,7 @@
     width: 25%;  
     border-color: $border-color-dark;
   }
-  h1 {
+  h2 {
     @include set-font($main-font-regular, $font-l);
     display: inline-block;
   }
