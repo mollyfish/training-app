@@ -1,7 +1,9 @@
 .workout-detail {
-  margin: 2em 2em 2em 20%;
+  margin: 2em 2em 2em 10%;
   padding-left: 1em;
   border-left: 1px solid $border-color-med;
+  max-width: 30em;
+  position: relative;
   h1 {
     @include set-font($main-font-regular, $font-xl);
     display: inline-block;
@@ -12,12 +14,11 @@
   }
   a {
     @include set-font($main-font-regular, $font-sm);
-  }
-  button {
-    display: block;
-    padding: 0;
-    margin-top: 1em;
-    @include set-font($main-font-regular, $font-sm);
+    &[href=""] {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
   }
   .date {
     @include set-font($main-font-regular, $font-sm);

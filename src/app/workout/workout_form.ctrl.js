@@ -6,6 +6,7 @@ require('../app');
     var vm = this;
     vm.save = saveForm;
     vm.workout = {};
+    vm.change = resetFalsy;
 
     initialize();
 
@@ -14,7 +15,7 @@ require('../app');
       if ($routeParams.workout_id) {
         WorkoutsService.get($routeParams.workout_id).then(function (resp) {
           vm.workout = resp.data;
-          vm.workout.date = vm.workout.date || new Date();
+          vm.workout.date = new Date(vm.workout.date) || new Date();
         });
       }
     }
@@ -27,6 +28,32 @@ require('../app');
 
         $location.path("/workouts/" + resp.data._id);
       });
+    }
+
+    function resetFalsy (sport) {
+      console.log('you chose ' + sport);
+      vm.workout.swim = false;
+      vm.workout.bike = false;
+      vm.workout.run = false;
+      vm.workout.xtrain = false;
+      vm.workout.rest = false;
+      switch (sport) {
+        case "swim":
+          vm.workout.swim = true;
+          break;
+        case "bike":
+          vm.workout.bike = true;
+          break;
+        case "run":
+          vm.workout.run = true;
+          break;
+        case "xtrain":
+          vm.workout.xtrain = true;
+          break;
+        default:
+          vm.workout.rest = true;
+      }
+      console.log('---------------');
     }
   }]);
 }());

@@ -15,7 +15,6 @@ require('../app');
         }
       },
       update: function (model) {
-        console.log(model);
         if (model.swim) {
           model.sport = 'Swim'
         }
@@ -31,7 +30,6 @@ require('../app');
         if (model.rest) {
           model.sport = 'Rest'
         } 
-        console.log(model);
         return $http.put(urlRoot + "/" + model._id, model);
       },
       create: function (model) {
