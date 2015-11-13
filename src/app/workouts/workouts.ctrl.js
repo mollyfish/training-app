@@ -29,13 +29,27 @@ require('../app');
 
   }]);
 
-  angular.module("training").filter('upcomingFilter', [function() {
+  angular.module("training").filter('upcomingEvents', [function() {
     return function (workouts) {
       var filtered_list = [];
       for (var i = 0; i < workouts.length; i++) {
         var today = new Date();
         var workoutDate = new Date(workouts[i].date);
         if (today <= workoutDate) {
+          filtered_list.push(workouts[i]);
+        }
+      }
+      return filtered_list;
+    }
+  }]);
+
+  angular.module("training").filter('pastEvents', [function() {
+    return function (workouts) {
+      var filtered_list = [];
+      for (var i = 0; i < workouts.length; i++) {
+        var today = new Date();
+        var workoutDate = new Date(workouts[i].date);
+        if (today >= workoutDate) {
           filtered_list.push(workouts[i]);
         }
       }

@@ -1,15 +1,35 @@
-<div class="workout-list">
-  <article ng-repeat="workout in vm.workouts | upcomingFilter | orderBy: 'date'">
+<article class="hidden workout-list" ng-hide="showme">
+  <button href="" ng-click="showme=true">Show past workouts</button>
+</article>
+<article class="workout-list" ng-show="showme">
+  <h1>Past workouts:</h1>
+  <button ng-click="showme=false">Hide past workouts</button>
+  <section class="past-workouts" ng-repeat="workout in vm.workouts | pastEvents | orderBy: 'date'">
     <a href="#/workouts/{{workout._id}}">
-      <h1 ng-class="
+      <h2 ng-class="
         workout.swim ? 'swim' : (
         workout.run ? 'run' : (
         workout.bike ? 'bike' : (
         workout.xtrain ? 'xtrain' : 'rest')))">
-        {{workout.sport}} {{workout.distance}} {{workout.units}}</h1>
-      <p class="date">{{workout.date | date: 'MMM dd, yyyy'}}</p>
-      <p class="comments">{{workout.comments | limitTo:20}}</p>
+        {{workout.sport}} {{workout.distance}} {{workout.units}}</h2>
+      <p class="date">{{workout.date | date: 'EEE, MMM dd, yyyy'}}</p>
+      <p class="comments">{{workout.comments | limitTo:15}}</p>
     </a>
-  </article>
+  </section>
+</article>
+<article class="workout-list">
+  <h1>Upcoming workouts:</h1>
+  <section class="future-workouts"  ng-repeat="workout in vm.workouts | upcomingEvents | orderBy: 'date'">
+    <a href="#/workouts/{{workout._id}}">
+      <h2 ng-class="
+        workout.swim ? 'swim' : (
+        workout.run ? 'run' : (
+        workout.bike ? 'bike' : (
+        workout.xtrain ? 'xtrain' : 'rest')))">
+        {{workout.sport}} {{workout.distance}} {{workout.units}}</h2>
+      <p class="date">{{workout.date | date: 'EEE, MMM dd, yyyy'}}</p>
+      <p class="comments">{{workout.comments | limitTo:15}}</p>
+    </a>
+  </section>
   <a href="#/workouts/new" class="btn">Add a new workout</a>
-</div>
+</article>
