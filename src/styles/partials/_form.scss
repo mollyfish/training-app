@@ -7,6 +7,9 @@ form {
     @include set-font($main-font-regular, $font-l);
     margin-bottom: 0.5em;
   }
+  p {
+    margin: 0.75em 0 0.25em 0;
+  }
   fieldset {
     margin: 0 auto;
   }

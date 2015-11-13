@@ -18,9 +18,18 @@
     </label>
   </fieldset>
   <fieldset class="inputs">
-    <input type="number" ng-model="vm.workout.distance" placeholder="Distance or Time" />
+    <input type="number" ng-model="vm.workout.distance" placeholder="Distance or Duration" />
     <input type="text" ng-model="vm.workout.units" placeholder="mi / m / hrs" />
     <input type="date" ng-model="vm.workout.date" />
+    <p>Popular times:</p>
+    <select ng-model="vm.workout.time">
+      <option value="5:45am">5:45am</option>
+      <option value="6:30am">6:30am</option>
+      <option value="8:30am">8:30am</option>
+      <option value="6:30pm">6:30pm</option>
+    </select>
+    <p>Custom time:</p>
+    <input type="text" ng-model="vm.workout.time" placeholder="0:00am" />
     <input type="text" ng-model="vm.workout.comments" placeholder="Notes" />
   </fieldset>
   <button type="submit" name="Submit">Submit</button>

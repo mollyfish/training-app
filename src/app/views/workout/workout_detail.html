@@ -5,7 +5,8 @@
         vm.workout.bike ? 'bike' : (
         vm.workout.xtrain ? 'xtrain' : 'rest')))">
         {{vm.workout.sport}} {{vm.workout.distance}} {{vm.workout.units}}</h1>
-  <p class="date">{{vm.workout.date | date: 'MMM dd, yyyy'}}</p>
+  <p class="date">{{vm.workout.date | date: 'EEEE, MMM dd, yyyy'}}</p>
+  <p class="date">{{vm.workout.time}}</p>
   <h2>Notes:</h2>
   <p class="comments">{{vm.workout.comments}}</p>
   <a href="#/workouts/{{vm.workout._id}}/edit">(edit this workout)</a>

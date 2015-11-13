@@ -21,7 +21,7 @@
     }
   }
   .date {
-    @include set-font($main-font-regular, $font-sm);
+    @include set-font($main-font-regular, $font-reg);
     margin: 0.25em 0;
   }
   .comments {
