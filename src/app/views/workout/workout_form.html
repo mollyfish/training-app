@@ -2,19 +2,19 @@
   <h1>Add a new workout:</h1>
   <fieldset class="radios">
     <label for="swim"> Swim
-      <input type="radio" ng-model="vm.workout.swim" name="sport" id="swim" ng-change="false" ng-value="true">
+      <input type="radio" ng-model="vm.workout.swim" name="sport" id="swim" ng-change="vm.change('swim')" ng-value="true">
     </label>
     <label for="bike"> Bike
-      <input type="radio" ng-model="vm.workout.bike" name="sport" id="bike" ng-change="false" ng-value="true"> 
+      <input type="radio" ng-model="vm.workout.bike" name="sport" id="bike" ng-change="vm.change('bike')" ng-value="true"> 
     </label>
     <label for="run"> Run
-      <input type="radio" ng-model="vm.workout.run" name="sport" id="run" ng-change="false" ng-value="true">
+      <input type="radio" ng-model="vm.workout.run" name="sport" id="run" ng-change="vm.change('run')" ng-value="true">
     </label>
     <label for="xtrain"> Xtrain
-      <input type="radio" ng-model="vm.workout.xtrain" name="sport" id="xtrain" ng-change="false" ng-value="true">
+      <input type="radio" ng-model="vm.workout.xtrain" name="sport" id="xtrain" ng-change="vm.change('xtrain')" ng-value="true">
     </label>
     <label for="rest"> Rest
-      <input type="radio" ng-model="vm.workout.rest" name="sport" id="rest" ng-change="false" ng-value="true">
+      <input type="radio" ng-model="vm.workout.rest" name="sport" id="rest" ng-change="vm.change('rest')" ng-value="true">
     </label>
   </fieldset>
   <fieldset class="inputs">
