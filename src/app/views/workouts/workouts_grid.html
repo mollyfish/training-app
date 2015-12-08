@@ -1,0 +1,14 @@
+<article class="week">
+<section class="future-workouts"  ng-repeat="workout in vm.workouts | upcomingEvents | thisWeek | orderBy: 'date'">
+  <a href="#/workouts/{{workout._id}}">
+    <h2 ng-class="
+      workout.swim ? 'swim' : (
+      workout.run ? 'run' : (
+      workout.bike ? 'bike' : (
+      workout.xtrain ? 'xtrain' : 'rest')))">
+      {{workout.sport}} {{workout.distance}} {{workout.units}}</h2>
+    <p class="date">{{workout.date | date: 'EEE, MMM dd, yyyy'}}, {{workout.time}}</p>
+    <p class="comments">{{workout.comments | limitTo:15}}{{workout.comments.length > 15 ? '...' : ''}}</p>
+  </a>
+</section>
+</article>

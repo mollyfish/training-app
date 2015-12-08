@@ -31,7 +31,6 @@ require('../app');
     }
 
     function resetFalsy (sport) {
-      console.log('you chose ' + sport);
       vm.workout.swim = false;
       vm.workout.bike = false;
       vm.workout.run = false;
@@ -53,7 +52,6 @@ require('../app');
         default:
           vm.workout.rest = true;
       }
-      console.log('---------------');
     }
   }]);
 }());

@@ -15,6 +15,10 @@ require('angular-route');
       templateUrl: "views/workout/workout_form.html",
       controller: "WorkoutFormCtrl as vm",
     })
+    .when("/workouts/grid", {
+      templateUrl: "views/workouts/workouts_grid.html",
+      controller: "GridCtrl as vm",
+    })
     .when("/workouts/:workout_id/edit", {
       templateUrl: "views/workout/workout_form.html",
       controller: "WorkoutFormCtrl as vm",
@@ -23,6 +27,7 @@ require('angular-route');
       templateUrl: "views/workout/workout_detail.html",
       controller: "WorkoutCtrl as vm",
     })
+    
     .otherwise({
       redirectTo: "/workouts",
     });
