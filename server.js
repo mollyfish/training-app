@@ -1,7 +1,8 @@
 var express = require('express');
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
-var Workout = require("./models/workout");
+var Workflow = require("./models/workflow");
+var User = require("./models/user");
 
 mongoose.connect("mongodb://localhost/blog")
 
@@ -22,113 +23,109 @@ app.use(express.static(__dirname + "/public"));
 // Register the router with the application
 app.use("/", router);
 
-// Create a new route with prefix /workouts
-var workoutsRoute = router.route("/api/workouts");
+// Create a new route with prefix /workflows
+var workflowsRoute = router.route("/api/workflows");
 
 // READ
 
-// Create endpoint /api/workouts for WORKOUT
-workoutsRoute.post(function (req, res) {
-  // Create a new instance of the Workout model
-  var workout = new Workout();
+// Create endpoint /api/workflows for WORKFLOW
+workflowsRoute.post(function (req, res) {
+  // Create a new instance of the Workflow model
+  var workflow = new Workflow();
 
-  // Set the workout properties that came from the WORKOUT data
-  workout.swim = req.body.swim;
-  workout.bike = req.body.bike;
-  workout.run = req.body.run;
-  workout.xtrain = req.body.xtrain;
-  workout.rest = req.body.rest;
-  workout.sport = req.body.sport;
-  workout.distance = req.body.distance;
-  workout.units = req.body.units;
-  workout.date = req.body.date;
-  workout.time = req.body.time;
-  workout.comments = req.body.comments;
+  // Set the workflow properties that came from the WORKFLOW data
+  workflow.name = req.body.name;
+  workflow.category = req.body.category;
+  // workflow.run = req.body.run;
+  // workflow.xtrain = req.body.xtrain;
+  // workflow.rest = req.body.rest;
+  // workflow.sport = req.body.sport;
+  // workflow.distance = req.body.distance;
+  // workflow.units = req.body.units;
+  
 
-  // Save the workout and check for errors
-  workout.save(function (err) {
+  // Save the workflow and check for errors
+  workflow.save(function (err) {
     if (err) {
       res.send(err);
     }
 
-    res.json(workout);
+    res.json(workflow);
   });
 });
 
-// Create endpoint /api/workouts for GET
-workoutsRoute.get(function(req, res) {
-  // Use the Workout model to find all workouts
-  Workout.find(function (err, workouts) {
+// Create endpoint /api/workflows for GET
+workflowsRoute.get(function(req, res) {
+  // Use the Workflow model to find all workflows
+  Workflow.find(function (err, workflows) {
     if (err) {
       res.send(err);
     }
 
-    res.json(workouts);
+    res.json(workflows);
   });
 });
 
 // CREATE
 
-// Create a new route for /workouts/:workout_id
-var workoutRoute = router.route("/api/workouts/:workout_id");
+// Create a new route for /workflows/:workflow_id
+var workflowRoute = router.route("/api/workflows/:workflow_id");
 
 
-// Create endpoint for /api/workouts/:workoutID
-workoutRoute.get(function(req, res) {
-  // Use the workout model to find a specific workout
-  Workout.findById(req.params.workout_id, function (err, workout) {
+// Create endpoint for /api/workflows/:workflowID
+workflowRoute.get(function(req, res) {
+  // Use the workflow model to find a specific workflow
+  Workflow.findById(req.params.workflow_id, function (err, workflow) {
     if (err) {
       res.send(err);
     }
 
-    res.json(workout);
+    res.json(workflow);
   });
 });
 
 // UPDATE
 
-// Change the workout's stuff
-workoutRoute.put(function(req, res) {
-  // Use the Workout model to find a specific workout
-  Workout.findById(req.params.workout_id, function (err, workout) {
+// Change the workflow's stuff
+workflowRoute.put(function(req, res) {
+  // Use the Workflow model to find a specific workflow
+  Workflow.findById(req.params.workflow_id, function (err, workflow) {
     if (err) {
       res.send(err);
     }
 
-    workout.swim = req.body.swim;
-    workout.bike = req.body.bike;
-    workout.run = req.body.run;
-    workout.xtrain = req.body.xtrain;
-    workout.rest = req.body.rest;
-    workout.sport = req.body.sport;
-    workout.distance = req.body.distance;
-    workout.units = req.body.units;
-    workout.date = req.body.date;
-    workout.time = req.body.time;
-    workout.comments = req.body.comments;
+    workflow.name = req.body.name;
+    workflow.category = req.body.category;
+    // workflow.run = req.body.run;
+    // workflow.xtrain = req.body.xtrain;
+    // workflow.rest = req.body.rest;
+    // workflow.sport = req.body.sport;
+    // workflow.distance = req.body.distance;
+    // workflow.units = req.body.units;
+    
 
-    // Save the workout and check for errors
-    workout.save(function (err) {
+    // Save the workflow and check for errors
+    workflow.save(function (err) {
       if (err) {
         res.send(err);
       }
 
-      res.json(workout);
+      res.json(workflow);
     });
   });
 });
 
 // DELETE
 
-// Create endpoint /api/workouts/:workout_id for DELETE
-workoutRoute.delete(function (req, res) {
-  // Use the workout model to find a specific workout and remove it
-  Workout.findByIdAndRemove(req.params.workout_id, function(err) {
+// Create endpoint /api/workflows/:workflow_id for DELETE
+workflowRoute.delete(function (req, res) {
+  // Use the workflow model to find a specific workflow and remove it
+  Workflow.findByIdAndRemove(req.params.workflow_id, function(err) {
     if (err) {
       res.send(err);
     }
 
-    res.json({ message: "Successfully removed workout." });
+    res.json({ message: "Successfully removed workflow." });
   });
 });
 
