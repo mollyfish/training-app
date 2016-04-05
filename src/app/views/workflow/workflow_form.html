@@ -1,12 +1,21 @@
 <form ng-submit="vm.save()">
   <h1>Add a new workflow:</h1>
   <label for="name"> Name:
-  <input type="text" name="name" id="name" ng-value="name">
+  <input type="text" ng-model="vm.workflow.name" name="name" id="name" ng-value="name">
   </label>
   <fieldset class="radios">
     <label for="servers"> Servers
       <input type="radio" ng-model="vm.workflow.category" name="category" id="servers" ng-change="vm.change('servers')" ng-value="servers">
     </label>
+    <!-- <label for="servers"> APIs
+      <input type="radio" ng-model="vm.workflow.category" name="category" id="servers" ng-change="vm.change('servers')" ng-value="servers">
+    </label>
+    <label for="servers"> SQL
+      <input type="radio" ng-model="vm.workflow.category" name="category" id="servers" ng-change="vm.change('servers')" ng-value="servers">
+    </label>
+    <label for="servers"> NodeJS
+      <input type="radio" ng-model="vm.workflow.category" name="category" id="servers" ng-change="vm.change('servers')" ng-value="servers">
+    </label> -->
     
   </fieldset>
 
