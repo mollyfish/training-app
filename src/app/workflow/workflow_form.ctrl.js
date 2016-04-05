@@ -2,20 +2,20 @@ require('../app');
 
 (function () {
   "use strict";
-  angular.module("training").controller("WorkoutFormCtrl", ["WorkoutsService", "$routeParams", "$location", function (WorkoutsService, $routeParams, $location) {
+  angular.module("codeTrainer").controller("WorkflowFormCtrl", ["WorkflowsService", "$routeParams", "$location", function (WorkflowsService, $routeParams, $location) {
     var vm = this;
     vm.save = saveForm;
-    vm.workout = {};
+    vm.workflow = {};
     vm.change = resetFalsy;
 
     initialize();
 
     function initialize () {
-      vm.workout.date = new Date();
-      if ($routeParams.workout_id) {
-        WorkoutsService.get($routeParams.workout_id).then(function (resp) {
-          vm.workout = resp.data;
-          vm.workout.date = new Date(vm.workout.date) || new Date();
+      vm.workflow.date = new Date();
+      if ($routeParams.workflow_id) {
+        WorkflowsService.get($routeParams.workflow_id).then(function (resp) {
+          vm.workflow = resp.data;
+          vm.workflow.date = new Date(vm.workflow.date) || new Date();
         });
       }
     }
@@ -23,35 +23,35 @@ require('../app');
     function saveForm () {
       var method;
 
-      method = $routeParams.workout_id ? "update" : "create";
-      WorkoutsService[method](vm.workout).then(function (resp) {
+      method = $routeParams.workflow_id ? "update" : "create";
+      WorkflowsService[method](vm.workflow).then(function (resp) {
 
-        $location.path("/workouts/" + resp.data._id);
+        $location.path("/workflows/" + resp.data._id);
       });
     }
 
     function resetFalsy (sport) {
       console.log('you chose ' + sport);
-      vm.workout.swim = false;
-      vm.workout.bike = false;
-      vm.workout.run = false;
-      vm.workout.xtrain = false;
-      vm.workout.rest = false;
+      vm.workflow.swim = false;
+      vm.workflow.bike = false;
+      vm.workflow.run = false;
+      vm.workflow.xtrain = false;
+      vm.workflow.rest = false;
       switch (sport) {
         case "swim":
-          vm.workout.swim = true;
+          vm.workflow.swim = true;
           break;
         case "bike":
-          vm.workout.bike = true;
+          vm.workflow.bike = true;
           break;
         case "run":
-          vm.workout.run = true;
+          vm.workflow.run = true;
           break;
         case "xtrain":
-          vm.workout.xtrain = true;
+          vm.workflow.xtrain = true;
           break;
         default:
-          vm.workout.rest = true;
+          vm.workflow.rest = true;
       }
       console.log('---------------');
     }

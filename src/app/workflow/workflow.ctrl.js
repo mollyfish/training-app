@@ -3,29 +3,29 @@ require('../app');
 (function () {
   "use strict";
 
-  angular.module("training").controller("WorkoutCtrl", ["WorkoutsService", "$routeParams", "$location", function (WorkoutsService, $routeParams, $location) {
+  angular.module("codeTrainer").controller("WorkflowCtrl", ["WorkflowsService", "$routeParams", "$location", function (WorkflowsService, $routeParams, $location) {
     var vm = this;
 
-    vm.workouts = [];
-    vm.delete = deleteWorkout;
+    vm.workflows = [];
+    vm.delete = deleteWorkflow;
 
     initialize();
 
     function initialize() {
-      WorkoutsService
-        .get($routeParams.workout_id)
+      WorkflowsService
+        .get($routeParams.workflow_id)
         .then(function (resp) {
-          vm.workout = resp.data;
+          vm.workflow = resp.data;
         });
     }
 
 
 
-    function deleteWorkout (workout) {
-      console.log('workout' + workout);
-      WorkoutsService.delete(workout).then(function () {
+    function deleteWorkflow (workflow) {
+      console.log('workflow' + workflow);
+      WorkflowsService.delete(workflow).then(function () {
         console.log('deleted');
-        $location.path("/workouts");
+        $location.path("/workflows");
       });
     }
   }]);

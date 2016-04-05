@@ -3,10 +3,10 @@ require('../app');
 (function () {
   "use strict";
 
-  angular.module("training").service("WorkoutsService", ["$http", function ($http) {
-    var urlRoot = "/api/workouts";
+  angular.module("codeTrainer").service("WorkflowsService", ["$http", function ($http) {
+    var urlRoot = "/api/workflows";
 
-    var Workout = {
+    var Workflow = {
       get: function (id) {
         if (angular.isDefined(id)) {
           return $http.get(urlRoot + "/" + id);
@@ -52,13 +52,13 @@ require('../app');
         return $http.post(urlRoot, model); // ideal, but doesn't work
       },
       delete: function (model) {
-        if (confirm('Are you sure you want to delete this workout?')) {
+        if (confirm('Are you sure you want to delete this workflow?')) {
           return $http.delete(urlRoot + "/" + model);
         } else {
           return;
         }
       }
     };
-    return Workout;
+    return Workflow;
   }]);
 }());

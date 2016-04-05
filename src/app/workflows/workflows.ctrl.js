@@ -3,27 +3,27 @@ require('../app');
 (function () {
   "use strict";
 
-  angular.module("training").controller("WorkoutsCtrl", ["WorkoutsService", function (WorkoutsService) {
+  angular.module("codeTrainer").controller("WorkflowsCtrl", ["WorkflowsService", function (WorkflowsService) {
     var vm = this;
 
-    vm.workouts = [];
-    vm.delete = deleteWorkout;
+    vm.workflows = [];
+    vm.delete = deleteWorkflow;
 
     initialize();
 
     function initialize () {
-      getWorkouts();
+      getWorkflows();
     }
 
-    function getWorkouts () {
-      WorkoutsService.get().then(function (resp) {
-        vm.workouts = resp.data;
+    function getWorkflows () {
+      WorkflowsService.get().then(function (resp) {
+        vm.workflows = resp.data;
       });
     }
 
-    function deleteWorkout (workout) {
-      WorkoutsService.delete(workout).then(function () {
-        getWorkouts();
+    function deleteWorkflow (workflow) {
+      WorkflowsService.delete(workflow).then(function () {
+        getWorkflows();
       });
     }
 

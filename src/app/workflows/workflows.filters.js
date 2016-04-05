@@ -7,7 +7,7 @@ require('../app');
   var start;
   var mid;
   var end;
-  var filtered_workout_list;
+  var filtered_workflow_list;
 
   function addWeeks(count, cb) {
     start = new Date();
@@ -24,99 +24,99 @@ require('../app');
     callback(start, mid, end);
   };
 
-  function filter(workouts, weekNumber) {
-    filtered_workout_list = [];
+  function filter(workflows, weekNumber) {
+    filtered_workflow_list = [];
       addWeeks(weekNumber, setDates);
-      for (var i = 0; i < workouts.length; i++) {
-        var workoutDate = new Date(workouts[i].date);
-        if (mid <= workoutDate && workoutDate < end) {
-          filtered_workout_list.push(workouts[i]);
+      for (var i = 0; i < workflows.length; i++) {
+        var workflowDate = new Date(workflows[i].date);
+        if (mid <= workflowDate && workflowDate < end) {
+          filtered_workflow_list.push(workflows[i]);
         }        
       }
-    return filtered_workout_list;
+    return filtered_workflow_list;
   }
 
-  angular.module("training").filter('upcomingEvents', [function() {
-    return function (workouts) {
+  angular.module("codeTrainer").filter('upcomingEvents', [function() {
+    return function (workflows) {
       var filtered_list = [];
-      for (var i = 0; i < workouts.length; i++) {
+      for (var i = 0; i < workflows.length; i++) {
         var today = new Date();
-        var workoutDate = new Date(workouts[i].date);
-        if (today <= workoutDate) {
-          filtered_list.push(workouts[i]);
+        var workflowDate = new Date(workflows[i].date);
+        if (today <= workflowDate) {
+          filtered_list.push(workflows[i]);
         }
       }
       return filtered_list;
     }
   }]);
 
-  angular.module("training").filter('pastEvents', [function() {
-    return function (workouts) {
+  angular.module("codeTrainer").filter('pastEvents', [function() {
+    return function (workflows) {
       var filtered_list = [];
-      for (var i = 0; i < workouts.length; i++) {
+      for (var i = 0; i < workflows.length; i++) {
         var today = new Date();
-        var workoutDate = new Date(workouts[i].date);
-        if (today >= workoutDate) {
-          filtered_list.push(workouts[i]);
+        var workflowDate = new Date(workflows[i].date);
+        if (today >= workflowDate) {
+          filtered_list.push(workflows[i]);
         }
       }
       return filtered_list;
     }
   }]);
 
-  angular.module("training").filter('thisWeek', [function() {
-    return function (workouts) {
+  angular.module("codeTrainer").filter('thisWeek', [function() {
+    return function (workflows) {
       var filtered_list = [];
-      return filter(workouts, 1);
+      return filter(workflows, 1);
     };
   }]);
 
-  angular.module("training").filter('week2', [function() {
-    return function (workouts) {
+  angular.module("codeTrainer").filter('week2', [function() {
+    return function (workflows) {
       var filtered_list = [];
-      return filter(workouts, 2);
+      return filter(workflows, 2);
     };
   }]);
 
-  angular.module("training").filter('week3', [function() {
-    return function (workouts) {
+  angular.module("codeTrainer").filter('week3', [function() {
+    return function (workflows) {
       var filtered_list = [];
-      return filter(workouts, 3);
+      return filter(workflows, 3);
     };
   }]);
 
-  angular.module("training").filter('week4', [function() {
-    return function (workouts) {
+  angular.module("codeTrainer").filter('week4', [function() {
+    return function (workflows) {
       var filtered_list = [];
-      return filter(workouts, 4);
+      return filter(workflows, 4);
     };
   }]);
 
-  angular.module("training").filter('week5', [function() {
-    return function (workouts) {
+  angular.module("codeTrainer").filter('week5', [function() {
+    return function (workflows) {
       var filtered_list = [];
-      return filter(workouts, 5);
+      return filter(workflows, 5);
     };
   }]);
 
-  angular.module("training").filter('week6', [function() {
-    return function (workouts) {
+  angular.module("codeTrainer").filter('week6', [function() {
+    return function (workflows) {
       var filtered_list = [];
-      return filter(workouts, 6);
+      return filter(workflows, 6);
     };
   }]);
 
-  angular.module("training").filter('week7', [function() {
-    return function (workouts) {
+  angular.module("codeTrainer").filter('week7', [function() {
+    return function (workflows) {
       var filtered_list = [];
-      return filter(workouts, 7);
+      return filter(workflows, 7);
     };
   }]);
 
-  angular.module("training").filter('week8', [function() {
-    return function (workouts) {
+  angular.module("codeTrainer").filter('week8', [function() {
+    return function (workflows) {
       var filtered_list = [];
-      return filter(workouts, 8);
+      return filter(workflows, 8);
     };
   }]);
 

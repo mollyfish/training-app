@@ -3,12 +3,12 @@ require('../app');
 (function() {
   "use strict";
 
-  angular.module("training").directive("workoutDetails", function () {
+  angular.module("codeTrainer").directive("workflowDetails", function () {
     return {
       scope: {
-        workout: "=workout",
+        workflow: "=workflow",
       },
-      templateUrl: 'views/workout/workout_detail.html',
+      templateUrl: 'views/workflow/workflow_detail.html',
     };
   });
 }());

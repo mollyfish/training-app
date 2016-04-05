@@ -1,10 +1,11 @@
 var mongoose = require("mongoose");
 
 var WorkflowSchema = new mongoose.Schema({
-  taskName: String,
+  name: String,
   steps: {},
   coderID: String,
-  category: String
+  category: String,
+  level: String
 });
 
 module.exports = mongoose.model("Workflow", WorkflowSchema);

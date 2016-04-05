@@ -1,7 +1,7 @@
-require('./workouts/workouts.service');
-require('./workouts/workouts.ctrl');
-require('./workouts/workouts.filters');
-require('./workout/workout.ctrl.js');
-require('./workout/workout_form.ctrl.js');
-require('./workout/workout_detail.directive.js');
+require('./workflows/workflows.service');
+require('./workflows/workflows.ctrl');
+require('./workflows/workflows.filters');
+require('./workflow/workflow.ctrl.js');
+require('./workflow/workflow_form.ctrl.js');
+require('./workflow/workflow_detail.directive.js');
 

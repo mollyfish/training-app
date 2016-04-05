@@ -1,0 +1,11 @@
+<form ng-submit="vm.save()">
+  <h1>Add a new workflow:</h1>
+  <fieldset class="radios">
+    <label for="servers"> Servers
+      <input type="radio" ng-model="vm.workflow.category" name="category" id="servers" ng-change="vm.change('servers')" ng-value="true">
+    </label>
+    
+  </fieldset>
+
+  <button type="submit" name="Submit">Submit</button>
+</form>
