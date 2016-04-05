@@ -23,6 +23,10 @@ module.exports = {
     src: src + "/app/*.html",
     dest: dest,
   },
+  assets: {
+    src: src + "/styles/**/*.jpg",
+    dest: dest,
+  },
   server: {
     serverFile: './server.js'
   },

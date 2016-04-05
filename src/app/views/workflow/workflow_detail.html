@@ -1,7 +1,26 @@
 <article class="workflow-detail">
   <h1>{{vm.workflow.name}}</h1>
-  
-  <h2>Notes:</h2>
-  <p>{{vm.workflow.name}}</p>
-  
+  <h2>{{vm.workflow.category}}</h2>
+  <h2 ng-if="vm.workflow.lang">{{vm.workflow.lang}}</h2>
+  <p ng-if="vm.workflow.difficulty"><em>Difficulty: </em>{{vm.workflow.difficulty}}</p>
+  <p ng-if="vm.workflow.time"><em>Completion time: </em>{{vm.workflow.time}}</p>
+	<ol>
+	  <li class="steps" ng-if="vm.workflow.step1">{{vm.workflow.step1}}</li>
+	  <li class="steps" ng-if="vm.workflow.step2">{{vm.workflow.step2}}</li>
+	  <li class="steps" ng-if="vm.workflow.step3">{{vm.workflow.step3}}</li>
+	  <li class="steps" ng-if="vm.workflow.step4">{{vm.workflow.step4}}</li>
+	  <li class="steps" ng-if="vm.workflow.step5">{{vm.workflow.step5}}</li>
+  </ol>
+  <p ng-if="vm.workflow.rating" class="rating"><em>Rating:</em> {{vm.workflow.rating}}/5</p>
+
+	  <a href="#/workflows/{{vm.workflow._id}}/edit">(edit this card)</a>
+	  <a href="" ng-click="vm.delete(vm.workflow._id)">(delete this card)</a>
+
+  <section class="social">
+  	<a href="#">Share</a>
+  	<a href="#">Save</a>
+  	<a href="#">Print</a>
+  	<a href="#">I Did This</a>
+  	<a href="#">Rate</a>
+  </section>
 </article>

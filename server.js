@@ -36,6 +36,17 @@ workflowsRoute.post(function (req, res) {
   // Set the workflow properties that came from the WORKFLOW data
   workflow.name = req.body.name;
   workflow.category = req.body.category;
+  // workflow.steps = req.body.steps;
+  workflow.tags = req.body.tags;
+  workflow.step1 = req.body.step1;
+  workflow.step2 = req.body.step2;
+  workflow.step3 = req.body.step3;
+  workflow.step4 = req.body.step4;
+  workflow.step5 = req.body.step5;
+  workflow.lang = req.body.lang;
+  workflow.difficulty = req.body.difficulty;
+  workflow.rating = req.body.rating;
+  workflow.time = req.body.time;
   // workflow.run = req.body.run;
   // workflow.xtrain = req.body.xtrain;
   // workflow.rest = req.body.rest;
@@ -96,6 +107,17 @@ workflowRoute.put(function(req, res) {
 
     workflow.name = req.body.name;
     workflow.category = req.body.category;
+    // workflow.steps = req.body.steps;
+    workflow.tags = req.body.tags;
+    workflow.step1 = req.body.step1;
+    workflow.step2 = req.body.step2;
+    workflow.step3 = req.body.step3;
+    workflow.step4 = req.body.step4;
+    workflow.step5 = req.body.step5;
+    workflow.lang = req.body.lang;
+    workflow.difficulty = req.body.difficulty;
+    workflow.rating = req.body.rating;
+    workflow.time = req.body.time;
     // workflow.run = req.body.run;
     // workflow.xtrain = req.body.xtrain;
     // workflow.rest = req.body.rest;

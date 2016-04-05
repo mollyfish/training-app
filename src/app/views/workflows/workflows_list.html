@@ -1,12 +1,23 @@
 
 <article class="workflow-list">
-  <h1>My Workflows:</h1>
+  <h1>Popular Recipe Cards:</h1>
 
-  <section ng-repeat="workflow in vm.workflows">
+
+
+  <section class="card" ng-repeat="workflow in vm.workflows">
     <a href="#/workflows/{{workflow._id}}">
-      <h2>{{workflow.name}} {{workflow.category}}</h2>
+      <h2>{{workflow.name}}</h2>
+      <ul>
+	      <li><em>Category:</em> {{workflow.category}}</li>
+	      <li><em>Tags:</em> {{workflow.tags}}</li>
+      	<li><em>Difficulty:</em> {{workflow.difficulty}}</li>
+      	<li class="rating"><em>Rating:</em> {{workflow.rating}}</li>
+      </ul>
     </a>
   </section>
-  <a href="#/workflows/new" class="btn">Add a new workflow</a>
+
+
+
+  <a href="#/workflows/new" class="btn">Add a new card</a>
 </article>
 

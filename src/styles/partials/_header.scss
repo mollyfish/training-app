@@ -1,15 +1,23 @@
 header {
-  padding: 1em;
-  background-color: $background-color-dark;
+  // padding: 1em;
+  background-color: $background-color-ms;
+  background-image: url(../images/food.jpg);
   h1 {
     @include set-font($main-font-regular, $font-xxl, $text-color-light);
+    margin-left: 0.2em;
   }
   nav {
-    padding-top: 0.5em;
+    padding-left: 0.5em;
+    padding: 0.5em;
+    background-color: rgba( 0,0,0,0.5);
+    .login {
+      float: right;
+    }
     a {
       @include set-font($main-font-regular, $font-reg, $text-color-light);
+      margin-right: 1em;
       &:hover {
-        color: $text-color-med;
+        color: $text-color-ms;
       }
     }
   }

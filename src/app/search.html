@@ -11,9 +11,9 @@
   <body>
     <header>
       <h1>DevRecipeBox</h1>
-      <form class="search" ng-submit="search.html">
+      <form class="search" ng-submit="/search.html">
         <input type="text" id="search" placeholder="Search">
-        <a href="#/workflows">Go</a>
+        <button type="submit" name="Submit">Go</button>
       </form>
       <nav>
         <a href="#/workflows">View All</a>
@@ -27,7 +27,9 @@
         </span>
       </nav>
     </header>
-    <main ng-view></main>
+    <main>
+      <h1>Search Results</h1>
+    </main>
     <script src="../js/packed.js"></script>
     <footer>
       <p>Molly Kent, Vania Kurniawati, Amrita Rajoo, Kum Ji Park &#169; 2016. All rights reserved.</p>

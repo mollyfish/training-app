@@ -1,6 +1,6 @@
-.workout-list {
+.workflow-list {
   padding: 1em;
-  border-bottom: 1px solid rgba($border-color-med, 0.25);
+  border-bottom: 1px solid rgba($border-color-ms, 0.25);
   &:last-child {
     border-bottom: none;
   }
@@ -10,24 +10,30 @@
       margin: 0;
     }
   }
-  .week {
-    display: block;
-  }
+
   h1 {
     @include set-font($main-font-regular, $font-l);
     display: block;
     margin-bottom: 0.5em;
   }
   section {
-    @include flex-container(inline-flex, column, wrap, flex-start, flex-start, flex-start);
+    @include flex-container(inline-flex, row, wrap, flex-start, flex-start, flex-start);
+    // background-color: red;
     margin: 2px;
     padding: 0.5em;
     a {
       padding: 0.25em;
-      border-left: 1px solid $border-color-med;
-      border-bottom: 1px solid $border-color-med;
+      border: 1px solid $border-color-ms;
+      // border-left: 1px solid $border-color-ms;
+      // border-bottom: 1px solid $border-color-ms;
       border-radius: 0.25em;
-      min-height: 4.5em;
+      min-height: 10em;
+    }
+    .rating {
+      color: $text-color-ms;
+    }
+    li {
+      margin: 0.2em 0;
     }
   }
 
@@ -39,7 +45,7 @@
   }
   .btn {
     @include set-font($main-font-regular, $font-reg);
-    @include button($text-color-light, $background-color-dark, $text-color-light, $background-color-rest);
+    @include button($text-color-light, $background-color-dark, $text-color-light, $background-color-ms);
     display: block;
     margin: 1em auto;
     padding: 0.5em;
@@ -50,26 +56,5 @@
     @include set-font($main-font-regular, $font-l);
     display: inline-block;
   }
-  .date {
-    @include set-font($main-font-regular, $font-sm);
-    margin: 0.25em 0;
-  }
-  .comments {
-    margin: 0.5em 0 0 0;
-  }
-  .swim {
-    color: $text-color-swim;
-  }
-  .bike {
-    color: $text-color-bike;
-  }
-  .run {
-    color: $text-color-run;
-  }
-  .xtrain {
-    color: $text-color-xtrain;
-  }
-  .rest {
-    color: $text-color-rest;
-  }
+  
 }

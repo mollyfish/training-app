@@ -1,7 +1,7 @@
 $color1: #000;
 $color2: lighten($color1, 60%);
 $color3: #fff;
-$color4: #0C8BE8; // swim
+$color4: #0C8BE8; // microsoft blue
 $color5: #00CC42; // bike
 $color6: #E8100C; // run
 $color7: #FF9800; // xtrain
@@ -10,7 +10,7 @@ $color8: #7E00FF; // rest
 $text-color-dark: $color1;
 $text-color-med: $color2;
 $text-color-light: $color3;
-$text-color-swim: $color4;
+$text-color-ms: $color4;
 $text-color-bike: $color5;
 $text-color-run: $color6;
 $text-color-xtrain: $color7;
@@ -19,7 +19,7 @@ $text-color-rest: $color8;
 $background-color-dark: $color1;
 $background-color-med: $color2;
 $background-color-light: $color3;
-$background-color-swim: $color4;
+$background-color-ms: $color4;
 $background-color-bike: $color5;
 $background-color-run: $color6;
 $background-color-xtrain: $color7;
@@ -28,7 +28,7 @@ $background-color-rest: $color8;
 $border-color-dark: $color1;
 $border-color-med: $color2;
 $border-color-light: $color3;
-$border-color-swim: $color4;
+$border-color-ms: $color4;
 $border-color-bike: $color5;
 $border-color-run: $color6;
 $border-color-xtrain: $color7;

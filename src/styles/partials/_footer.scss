@@ -1,6 +1,6 @@
 footer {
-  @include set-font($main-font-regular, $font-tiny, $text-color-light);
-  background-color: $background-color-dark;
+  @include set-font($main-font-regular, $font-xs, $text-color-light);
+  background-color: $background-color-ms;
   padding: 1em;
   text-align: center;
 }

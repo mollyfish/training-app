@@ -1,0 +1,49 @@
+.workflow-detail {
+  margin: 2em 2em 2em 10%;
+  padding-left: 1em;
+  border-left: 1px solid $border-color-med;
+  max-width: 30em;
+  position: relative;
+  h1 {
+    @include set-font($main-font-regular, $font-xl);
+    display: inline-block;
+  }
+  h2 {
+    @include set-font($main-font-regular, $font-l);
+    margin-top: 0.5em;
+  }
+  p {
+    margin: 0.5em 0;
+  }
+  a {
+    @include set-font($main-font-regular, $font-sm);
+    // &[href=""] {
+    //   position: absolute;
+    //   bottom: 0;
+    //   right: 0;
+    // }
+  }
+  ol {
+    margin: 1em 0 0 2em;
+  }
+  .steps {
+    @include set-font($main-font-regular, $font-reg);
+    margin: 0.5em 0 1em 0;
+  }
+  .rating {
+    color: $text-color-ms;
+  }
+  .social {
+    // display: block;
+    // width: 100%;
+    background-color: rgba($background-color-dark, 0.2);
+    margin-top: 1em;
+    margin-left: -1em;
+    a {
+      @include set-font($main-font-regular, $font-reg);
+      display: inline-block;
+      color: $text-color-ms;
+      margin: 2em 0 2em 2em;
+    }
+  }
+}
