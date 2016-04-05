@@ -23,8 +23,12 @@ module.exports = {
     src: src + "/app/*.html",
     dest: dest,
   },
-  assets: {
-    src: src + "/styles/**/*.jpg",
+  jpeg: {
+    src: src + "/styles/**/*.jpeg",
+    dest: dest,
+  },
+  png: {
+    src: src + "/styles/**/*.png",
     dest: dest,
   },
   server: {

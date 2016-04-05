@@ -19,14 +19,16 @@
   section {
     @include flex-container(inline-flex, row, wrap, flex-start, flex-start, flex-start);
     // background-color: red;
+    // background-image: url(../images/lines.png);
     margin: 2px;
     padding: 0.5em;
     a {
       padding: 0.25em;
       border: 1px solid $border-color-ms;
+      border-radius: 0.25em;
       // border-left: 1px solid $border-color-ms;
       // border-bottom: 1px solid $border-color-ms;
-      border-radius: 0.25em;
+      
       min-height: 10em;
     }
     .rating {
