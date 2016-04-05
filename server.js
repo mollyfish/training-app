@@ -6,7 +6,7 @@ var Workout = require("./models/workout");
 mongoose.connect("mongodb://localhost/blog")
 
 var app = express();
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 var router = express.Router();
 
 app.use(bodyParser.json());

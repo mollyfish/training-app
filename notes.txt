@@ -1,0 +1,9 @@
+Keep track of things you did, make notes of how you did it.
+
+Keep track of those tasks that you only do every once in a while
+
+MVP:
+
+view all saved "cards"
+view individual card
+
